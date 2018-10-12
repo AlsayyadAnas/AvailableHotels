@@ -8,9 +8,7 @@ import com.beamwallet.exceptions.CommunationFailedException;
 import com.beamwallet.rest.model.AvailableHotelRequest;
 import com.beamwallet.rest.model.AvailableHotelsResponse;
 
-import junit.framework.TestCase;
-
-public class MockAvailableServiceImpl extends TestCase {
+public class MockAvailableServiceImpl {
 
 	public List<AvailableHotelsResponse> getAvailableHotels(AvailableHotelRequest request) throws CommunationFailedException, BusinessException {
 		

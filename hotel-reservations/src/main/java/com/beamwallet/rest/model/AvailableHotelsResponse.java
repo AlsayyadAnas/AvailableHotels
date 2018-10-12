@@ -69,5 +69,53 @@ public class AvailableHotelsResponse implements Comparable<AvailableHotelsRespon
 	public int compareTo(AvailableHotelsResponse o) {
 		return Integer.compare(o.rate,this.rate);
 	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(amenities);
+		result = prime * result + ((fare == null) ? 0 : fare.hashCode());
+		result = prime * result + ((hotelname == null) ? 0 : hotelname.hashCode());
+		result = prime * result + ((provider == null) ? 0 : provider.hashCode());
+		result = prime * result + ((rate == null) ? 0 : rate.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		AvailableHotelsResponse other = (AvailableHotelsResponse) obj;
+		if (!Arrays.equals(amenities, other.amenities))
+			return false;
+		if (fare == null) {
+			if (other.fare != null)
+				return false;
+		} else if (!fare.equals(other.fare))
+			return false;
+		if (hotelname == null) {
+			if (other.hotelname != null)
+				return false;
+		} else if (!hotelname.equals(other.hotelname))
+			return false;
+		if (provider == null) {
+			if (other.provider != null)
+				return false;
+		} else if (!provider.equals(other.provider))
+			return false;
+		if (rate == null) {
+			if (other.rate != null)
+				return false;
+		} else if (!rate.equals(other.rate))
+			return false;
+		return true;
+	}
+	
+	
 	
 }
